@@ -14,29 +14,29 @@ class ContactForm extends JFrame {
     private JComboBox<String> programTypeComboBox;
     private JTextArea messageTextArea;
     private JButton submitButton;
-    private JButton backButton; // Back button
+    private JButton backButton;
     private JLabel imageLabel;
 
     public ContactForm() {
         setTitle("Contact Form");
-        setExtendedState(JFrame.MAXIMIZED_BOTH); // Full-Screen Mode
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Left Panel for Image
+
         JPanel leftPanel = new JPanel(new BorderLayout());
-        imageLabel = new JLabel(new ImageIcon("bride.jpg")); // Load Image
+        imageLabel = new JLabel(new ImageIcon("bride.jpg")); 
         imageLabel.setHorizontalAlignment(JLabel.CENTER);
         imageLabel.setVerticalAlignment(JLabel.CENTER);
         leftPanel.add(imageLabel, BorderLayout.CENTER);
         add(leftPanel, BorderLayout.WEST);
 
-        // Right Panel for Form
-        JPanel rightPanel = new JPanel(new GridLayout(10, 2, 20, 20)); // Adjusted grid for Back button
-        rightPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50)); // Padding
-        Font font = new Font("Arial", Font.PLAIN, 30); // Text Size 30
+        
+        JPanel rightPanel = new JPanel(new GridLayout(10, 2, 20, 20)); 
+        rightPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50)); 
+        Font font = new Font("Arial", Font.PLAIN, 30); 
 
-        // Input Fields
+        
         rightPanel.add(createLabel("Your Name:"));
         yourNameTextField = createTextField();
         rightPanel.add(yourNameTextField);
@@ -70,10 +70,10 @@ class ContactForm extends JFrame {
         JScrollPane scrollPane = new JScrollPane(messageTextArea);
         rightPanel.add(scrollPane);
 
-        // Submit Button
+        
         submitButton = new JButton("SUBMIT");
         submitButton.setFont(new Font("Arial", Font.BOLD, 35));
-        submitButton.setBackground(new Color(200, 150, 100)); // Soft Brown Color
+        submitButton.setBackground(new Color(200, 150, 100)); 
         submitButton.setForeground(Color.WHITE);
         submitButton.setFocusPainted(false);
         submitButton.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
@@ -81,7 +81,7 @@ class ContactForm extends JFrame {
         rightPanel.add(submitButton);
 
 
-        // Back Button
+        
         backButton = new JButton("BACK");
         backButton.setFont(new Font("Arial", Font.BOLD, 35));
         backButton.setBackground(new Color(200, 150, 100)); // Soft Brown Color
@@ -109,7 +109,7 @@ class ContactForm extends JFrame {
     }
 
     private void handleSubmit(ActionEvent e) {
-        // Collect User Input
+        
         String yourName = yourNameTextField.getText();
         String contactNo = contactNoTextField.getText();
         String programDate = programDateTextField.getText();
@@ -118,10 +118,10 @@ class ContactForm extends JFrame {
         String programType = (String) programTypeComboBox.getSelectedItem();
         String message = messageTextArea.getText();
 
-        // Save Data to Text File
+        
         saveToFile(yourName, contactNo, programDate, guestNumber, emailAddress, programType, message);
 
-        // Clear Form After Submission
+        
         yourNameTextField.setText("");
         contactNoTextField.setText("");
         programDateTextField.setText("");
