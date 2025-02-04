@@ -14,7 +14,7 @@ public class EventUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Load background image
+    
         ImageIcon img = loadImage("even.jpg");
         JLabel backgroundLabel = new JLabel();
         if (img != null) {
@@ -26,7 +26,7 @@ public class EventUI extends JFrame {
         backgroundLabel.setVerticalAlignment(SwingConstants.CENTER);
         add(backgroundLabel, BorderLayout.CENTER);
 
-        // Top Navigation Bar
+        
         JPanel navBar = new JPanel(new BorderLayout());
         navBar.setBackground(new Color(240, 230, 220));
         
